@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 10%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #ff7f50;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #ff6347;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Weather Wizard</h1>
+        <p>Get real-time weather updates and forecasts for any city around the globe!</p>
+        <a href="/current-weather" class="btn">Check Current Weather</a>
+        <a href="/forecast" class="btn">View Weather Forecast</a>
+        <a href="/about" class="btn">About Us</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Weather Wizard. All rights reserved.</p>
+    </footer>
+</body>
+</html>
