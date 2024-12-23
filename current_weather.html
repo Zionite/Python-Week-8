@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 5%;
+            max-width: 600px;
+            background: #ffffffaa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: #ff0000;
+            text-align: center;
+        }
+        .weather-card {
+            text-align: center;
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Current Weather</h1>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="city" class="form-label">Enter City Name:</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="e.g., Lagos" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn">Get Weather</button>
+            </div>
+        </form>
+
+        {% if error %}
+        <div class="error mt-3">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        {% if weather_data %}
+        <div class="weather-card mt-4">
+            <h2>{{ weather_data.city }}</h2>
+            <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ weather_data.icon }}@2x.png" alt="Weather Icon">
+            <p><strong>Temperature:</strong> {{ weather_data.temperature }}°C</p>
+            <p><strong>Condition:</strong> {{ weather_data.description }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
